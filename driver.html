@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bus Buddy - Driver Location</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="driver-container" style="padding: 2rem; font-family: Arial, sans-serif;">
+    <h1>Driver Location Update</h1>
+    <p id="status">Waiting for location...</p>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script>
+    const statusEl = document.getElementById('status');
+
+    if (!navigator.geolocation) {
+      statusEl.textContent = 'Geolocation is not supported by your browser.';
+    } else {
+      function updateLocation(position) {
+        const lat = position.coords.latitude;
+        const lng = position.coords.longitude;
+        statusEl.textContent = `Location updated: (${lat.toFixed(5)}, ${lng.toFixed(5)})`;
+
+        // Write location to Firebase Realtime Database
+        const db = firebase.database();
+        db.ref('bus/location').set({
+          latitude: lat,
+          longitude: lng,
+          timestamp: Date.now()
+        }).catch((error) => {
+          statusEl.textContent = 'Error updating location: ' + error.message;
+        });
+      }
+
+      function errorHandler(error) {
+        statusEl.textContent = 'Error getting location: ' + error.message;
+      }
+
+      // Update location every 5 seconds
+      navigator.geolocation.getCurrentPosition(updateLocation, errorHandler);
+      setInterval(() => {
+        navigator.geolocation.getCurrentPosition(updateLocation, errorHandler);
+      }, 5000);
+    }
+  </script>
+</body>
+</html>
