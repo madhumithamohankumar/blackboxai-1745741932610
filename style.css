@@ -1,0 +1,268 @@
+/* Common styles for Bus Buddy */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.left-side, .right-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-side {
+  background-color: #1e40af; /* Blue */
+  color: white;
+  flex-direction: column;
+}
+
+.logo {
+  max-width: 60%;
+  height: auto;
+}
+
+.right-side {
+  background-color: white;
+  flex-direction: column;
+  padding: 2rem;
+  box-shadow: -4px 0 8px rgba(0,0,0,0.1);
+}
+
+.login-form {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form h2 {
+  margin-bottom: 1rem;
+  color: #1e40af;
+}
+
+.login-form label {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.login-form input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-form button {
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  background-color: #1e40af;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+  background-color: #374ac1;
+}
+
+/* Dashboard styles */
+
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  background-color: #f0f4f8;
+}
+
+.left-sidebar {
+  width: 200px;
+  background-color: #1e40af;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.left-sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.left-sidebar nav ul li {
+  margin-bottom: 1rem;
+}
+
+.left-sidebar nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.left-sidebar nav ul li a:hover,
+.left-sidebar nav ul li a.active {
+  background-color: #374ac1;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.right-sidebar {
+  width: 250px;
+  background-color: white;
+  box-shadow: -4px 0 8px rgba(0,0,0,0.1);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.profile-section h2 {
+  margin-top: 0;
+  color: #1e40af;
+}
+
+.profile-section button {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: #1e40af;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.profile-section button:hover {
+  background-color: #374ac1;
+}
+
+/* Students page styles */
+
+.students-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.student-row {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  padding: 0.75rem;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.student-row.header {
+  font-weight: bold;
+  background-color: #1e40af;
+  color: white;
+}
+
+.student-cell {
+  flex: 1;
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Bus page styles */
+
+.bus-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.bus-form label {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.bus-form input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.form-buttons button {
+  flex: 1;
+  padding: 0.75rem;
+  background-color: #1e40af;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-buttons button:hover {
+  background-color: #374ac1;
+}
+
+/* Location page styles */
+
+.location-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.location-form label {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.location-form input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.notification {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: #d1e7dd;
+  color: #0f5132;
+  border-radius: 4px;
+  font-weight: bold;
+}
