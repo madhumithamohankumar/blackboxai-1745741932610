@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bus Buddy - Bus Info</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="left-sidebar">
+      <nav>
+        <ul>
+          <li><a href="students.html" class="tab-link">Students</a></li>
+          <li><a href="buses.html" class="tab-link active">Bus</a></li>
+          <li><a href="location.html" class="tab-link">Location</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <h1>Bus Information</h1>
+      <form id="bus-form" class="bus-form">
+        <label for="bus-name">Name</label>
+        <input type="text" id="bus-name" name="bus-name" required />
+        <label for="bus-number">Number</label>
+        <input type="text" id="bus-number" name="bus-number" required />
+        <label for="bus-busnumber">Bus Number</label>
+        <input type="text" id="bus-busnumber" name="bus-busnumber" required />
+        <label for="bus-location">Location</label>
+        <input type="text" id="bus-location" name="bus-location" required />
+        <div class="form-buttons">
+          <button type="submit">Submit</button>
+          <button type="button" id="cancel-btn">Cancel</button>
+        </div>
+      </form>
+    </main>
+    <aside class="right-sidebar">
+      <section class="profile-section">
+        <h2>Profile</h2>
+        <button id="edit-profile-btn">Edit Profile</button>
+        <button id="logout-btn">Logout</button>
+      </section>
+    </aside>
+  </div>
+  <script>
+    document.getElementById('bus-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Bus information submitted!');
+      this.reset();
+    });
+    document.getElementById('cancel-btn').addEventListener('click', function() {
+      document.getElementById('bus-form').reset();
+    });
+  </script>
+</body>
+</html>
