@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bus Buddy - Location</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="left-sidebar">
+      <nav>
+        <ul>
+          <li><a href="students.html" class="tab-link">Students</a></li>
+          <li><a href="buses.html" class="tab-link">Bus</a></li>
+          <li><a href="location.html" class="tab-link active">Location</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <h1>Set Location</h1>
+      <form id="location-form" class="location-form">
+        <label for="from-location">From</label>
+        <input type="text" id="from-location" name="from-location" required />
+        <label for="to-location">To</label>
+        <input type="text" id="to-location" name="to-location" required />
+        <div class="form-buttons">
+          <button type="submit">Submit</button>
+          <button type="button" id="cancel-btn">Cancel</button>
+        </div>
+      </form>
+      <div id="notification" class="notification" style="display:none;"></div>
+    </main>
+    <aside class="right-sidebar">
+      <section class="profile-section">
+        <h2>Profile</h2>
+        <button id="edit-profile-btn">Edit Profile</button>
+        <button id="logout-btn">Logout</button>
+      </section>
+    </aside>
+  </div>
+  <script>
+    const form = document.getElementById('location-form');
+    const notification = document.getElementById('notification');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      notification.textContent = 'Location information submitted successfully!';
+      notification.style.display = 'block';
+      form.reset();
+      setTimeout(() => {
+        notification.style.display = 'none';
+      }, 3000);
+    });
+    document.getElementById('cancel-btn').addEventListener('click', function() {
+      form.reset();
+      notification.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
