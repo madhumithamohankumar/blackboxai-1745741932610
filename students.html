@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bus Buddy - Students</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="left-sidebar">
+      <nav>
+        <ul>
+          <li><a href="students.html" class="tab-link active">Students</a></li>
+          <li><a href="buses.html" class="tab-link">Bus</a></li>
+          <li><a href="location.html" class="tab-link">Location</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <h1>Students List</h1>
+      <div class="students-list">
+        <div class="student-row header">
+          <div class="student-cell">Name</div>
+          <div class="student-cell">Number</div>
+          <div class="student-cell">Email</div>
+          <div class="student-cell">Bus ID</div>
+        </div>
+        <div class="student-row">
+          <div class="student-cell">Alice Johnson</div>
+          <div class="student-cell">1234567890</div>
+          <div class="student-cell">alice@example.com</div>
+          <div class="student-cell">Bus-01</div>
+        </div>
+        <div class="student-row">
+          <div class="student-cell">Bob Smith</div>
+          <div class="student-cell">0987654321</div>
+          <div class="student-cell">bob@example.com</div>
+          <div class="student-cell">Bus-02</div>
+        </div>
+        <div class="student-row">
+          <div class="student-cell">Carol Lee</div>
+          <div class="student-cell">5551234567</div>
+          <div class="student-cell">carol@example.com</div>
+          <div class="student-cell">Bus-01</div>
+        </div>
+      </div>
+    </main>
+    <aside class="right-sidebar">
+      <section class="profile-section">
+        <h2>Profile</h2>
+        <button id="edit-profile-btn">Edit Profile</button>
+        <button id="logout-btn">Logout</button>
+      </section>
+    </aside>
+  </div>
+</body>
+</html>
